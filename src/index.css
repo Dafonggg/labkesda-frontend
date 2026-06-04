@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #006a44;
+  --color-on-primary: #ffffff;
+  --color-secondary: #675e42;
+  --color-on-primary-fixed: #002112;
+  --color-on-secondary-fixed: #211b06;
+  --color-on-secondary-fixed-variant: #4f462d;
+  --color-surface-dim: #dcd9d9;
+  --color-status-warning: #F59E0B;
+  --color-on-tertiary-container: #fbfff9;
+  --color-surface-tint: #006c46;
+  --color-on-surface-variant: #3e4942;
+  --color-outline-variant: #bdcabf;
+  --color-on-surface: #1b1c1c;
+  --color-gray-100: #F5F5F5;
+  --color-on-background: #1b1c1c;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #303030;
+  --color-tertiary-fixed-dim: #84d7aa;
+  --color-gray-400: #A3A3A3;
+  --color-on-tertiary-fixed-variant: #005234;
+  --color-tertiary: #096a45;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-on-secondary: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-status-success: #16A34A;
+  --color-inverse-on-surface: #f3f0f0;
+  --color-surface-container: #f0eded;
+  --color-surface-bright: #fbf9f8;
+  --color-on-primary-container: #fafff9;
+  --color-surface-container-high: #eae8e7;
+  --color-outline: #6e7a71;
+  --color-background: #fbf9f8;
+  --color-primary-fixed: #90f7c0;
+  --color-status-danger: #DC2626;
+  --color-surface-variant: #e4e2e1;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed-dim: #d3c6a4;
+  --color-surface-container-highest: #e4e2e1;
+  --color-primary-container: #0b8658;
+  --color-on-tertiary-fixed: #002112;
+  --color-tertiary-container: #2f845d;
+  --color-inverse-primary: #73daa5;
+  --color-surface: #fbf9f8;
+  --color-gray-200: #E5E5E5;
+  --color-cream-bg: #FFFCF5;
+  --color-status-info: #2563EB;
+  --color-secondary-fixed: #efe2bf;
+  --color-on-secondary-container: #6d6448;
+  --color-error: #ba1a1a;
+  --color-tertiary-fixed: #a0f4c5;
+  --color-on-primary-fixed-variant: #005233;
+  --color-secondary-container: #efe2bf;
+  --color-primary-fixed-dim: #73daa5;
+
+  --font-body-sm: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+  --font-headline-xl: "Poppins", sans-serif;
+  --font-headline-sm: "Poppins", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-headline-lg: "Poppins", sans-serif;
+  --font-headline-md: "Poppins", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+
+  --spacing-container-padding: 16px;
+  --spacing-topbar-height: 60px;
+  --spacing-stack-lg: 16px;
+  --spacing-stack-md: 12px;
+  --spacing-gutter: 12px;
+  --spacing-stack-sm: 6px;
+  --spacing-sidebar-width: 240px;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+body {
+  background-color: var(--color-cream-bg);
+  color: var(--color-on-surface);
+  font-family: var(--font-body-md);
+  margin: 0;
+  font-size: 14px;
+}
+
+.soft-shadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-stack-lg);
+}
+
+/* Premium Modal Transitions & Hardware-Accelerated Zoom Animations */
+@keyframes modalZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility animate-modal-zoom {
+  animation: modalZoomIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@utility animate-backdrop-fade {
+  animation: backdropFadeIn 0.2s ease-out forwards;
+  will-change: opacity;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Dashboard Overhaul — Premium Animations & Utilities
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 12px 4px rgba(220, 38, 38, 0.15); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ringGrow {
+  from {
+    stroke-dashoffset: var(--ring-circumference, 283);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@utility animate-fade-in-up {
+  animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@utility animate-slide-in-right {
+  animation: slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@utility animate-count-pulse {
+  animation: countPulse 0.5s ease-in-out;
+}
+
+@utility animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@utility animate-progress-fill {
+  animation: progressFill 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@utility animate-ring-grow {
+  animation: ringGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient mesh background for revenue/special widgets */
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 106, 68, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+}
+
+/* Stagger animation delay utility */
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(7) { animation-delay: 360ms; }
+.animate-stagger > *:nth-child(8) { animation-delay: 420ms; }
+
+/* QR Scanner scanning line animation */
+@keyframes scanLine {
+  0%, 100% { top: 8px; }
+  50% { top: calc(100% - 10px); }
+}
+
+@utility animate-scan-line {
+  animation: scanLine 2.5s ease-in-out infinite;
+  position: absolute;
+}
+
+/* Soft shadow small variant */
+.soft-shadow-sm {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Modern Map — Leaflet Overrides & Pin Animations
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Compact glassmorphism attribution */
+.leaflet-control-attribution {
+  font-size: 8px !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  color: rgba(0, 0, 0, 0.45) !important;
+  margin: 4px !important;
+}
+.leaflet-control-attribution a {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Hide default Leaflet zoom control (we use custom) */
+.modern-map .leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Pin pulse ring animation */
+@keyframes pinPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pinPulseInner {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Smooth crosshair on map grab */
+.modern-map .leaflet-grab {
+  cursor: grab;
+}
+.modern-map .leaflet-dragging .leaflet-grab {
+  cursor: grabbing;
+}
