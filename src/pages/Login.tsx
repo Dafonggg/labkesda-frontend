@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLogin } from '@/hooks/useAuth';
-import { ShieldCheck, Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { ShieldCheck, Mail, Lock, ArrowRight, Eye, EyeOff, ShieldAlert } from 'lucide-react';
 import { toast } from 'sonner';
 import logoTerbaru from '../assets/logo terbaru.svg';
 
@@ -13,6 +13,7 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showForgotAlert, setShowForgotAlert] = useState(false);
 
   const from = location.state?.from?.pathname || '/';
 
@@ -84,9 +85,13 @@ const Login: React.FC = () => {
             <label className="block font-label-sm text-xs font-semibold text-on-surface-variant" htmlFor="password">
               Kata Sandi
             </label>
-            <a href="#" className="font-label-sm text-[11px] font-medium text-primary hover:underline">
-              Lupa Sandi?
-            </a>
+            <button
+              type="button"
+              onClick={() => setShowForgotAlert(true)}
+              className="font-label-sm text-[11px] font-medium text-primary hover:underline cursor-pointer"
+            >
+              Lupa Password?
+            </button>
           </div>
           <div className="relative">
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none z-10">
@@ -140,6 +145,34 @@ const Login: React.FC = () => {
         <ShieldCheck size={14} className="text-primary" />
         Sistem Terakreditasi ISO/IEC 17025 • UPTD Purwakarta
       </div>
+
+      {/* Forgot Password Alert Modal */}
+      {showForgotAlert && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-slate-950/40 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
+            onClick={() => setShowForgotAlert(false)}
+          />
+          <div className="bg-white rounded-3xl p-6 shadow-2xl max-w-sm w-full relative z-10 border border-outline-variant flex flex-col items-center text-center transform scale-100 transition-all duration-200 animate-in zoom-in-95">
+            <div className="bg-amber-50 p-4 rounded-full text-amber-500 mb-4 border border-amber-100">
+              <ShieldAlert size={36} />
+            </div>
+            <h3 className="text-base font-bold text-on-surface mb-2">
+              Lupa Kata Sandi?
+            </h3>
+            <p className="text-xs text-on-surface-variant leading-relaxed mb-6">
+              Untuk alasan keamanan, pemulihan kata sandi akun SIM Labkesda dilakukan oleh Administrator. Silakan hubungi <strong>Administrator UPTD Labkesda Purwakarta</strong> untuk mereset kata sandi Anda.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowForgotAlert(false)}
+              className="w-full bg-primary text-on-primary font-semibold text-xs py-3 rounded-xl hover:bg-primary/95 transition-all active:scale-[0.98] cursor-pointer shadow-md"
+            >
+              Saya Mengerti
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
