@@ -83,7 +83,7 @@ const Login: React.FC = () => {
         <div className="space-y-1.5">
           <div className="flex justify-between items-center">
             <label className="block font-label-sm text-xs font-semibold text-on-surface-variant" htmlFor="password">
-              Kata Sandi
+              Password
             </label>
             <button
               type="button"
