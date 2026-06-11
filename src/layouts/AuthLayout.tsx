@@ -8,7 +8,7 @@ const AuthLayout: React.FC = () => {
 
   // If already authenticated, redirect to root dashboard immediately
   if (isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return (

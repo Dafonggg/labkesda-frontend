@@ -15,7 +15,7 @@ const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showForgotAlert, setShowForgotAlert] = useState(false);
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();

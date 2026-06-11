@@ -43,7 +43,7 @@ import Tracking from '../pages/Tracking';
 
 export const router = createBrowserRouter([
   // Public Landing Page
-  { path: '/landing', element: <LandingPage /> },
+  { path: '/', element: <LandingPage /> },
 
   // Public routes (e.g. Login)
   {
@@ -55,15 +55,15 @@ export const router = createBrowserRouter([
 
   // Base Dashboard Shell (Requires authentication)
   {
-    path: '/',
+    path: '/dashboard',
     element: <ProtectedRoute />, // Verifies that user is logged in
     children: [
       {
-        path: '/',
+        path: '/dashboard',
         element: <DashboardLayout />,
         children: [
           // 1. Dashboard Landing (Accessible to all roles)
-          { path: '/', element: <AdminDashboard /> },
+          { index: true, element: <AdminDashboard /> },
 
           // 2. Admin Role Protected Routes
           {
