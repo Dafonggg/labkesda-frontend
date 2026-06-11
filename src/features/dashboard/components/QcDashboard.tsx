@@ -251,14 +251,14 @@ const QcDashboard: React.FC = () => {
               <RefreshCw size={15} />
             </button>
             <button
-              onClick={() => navigate('/qc/history')}
+              onClick={() => navigate('/dashboard/qc/history')}
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2.5 rounded-lg hover:bg-white/20 transition-all font-label-md text-xs font-semibold cursor-pointer backdrop-blur-sm"
             >
               <History size={14} />
               Riwayat
             </button>
             <button
-              onClick={() => navigate('/qc/verifikasi')}
+              onClick={() => navigate('/dashboard/qc/verifikasi')}
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-white text-primary px-5 py-2.5 rounded-lg hover:bg-white/90 transition-all font-label-md text-xs font-bold cursor-pointer soft-shadow hover:scale-[1.02] active:scale-[0.98]"
             >
               <ClipboardCheck size={14} />
@@ -272,7 +272,7 @@ const QcDashboard: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
         {/* KPI 1: Antrean Verifikasi */}
         <div
-          onClick={() => navigate('/qc/verifikasi')}
+          onClick={() => navigate('/dashboard/qc/verifikasi')}
           className={`bg-white rounded-xl p-5 soft-shadow border flex flex-col justify-between hover-lift cursor-pointer group transition-all duration-300 ${
             (summary?.qc_pending_count ?? 0) > 0
               ? 'border-l-4 border-l-status-warning border-outline-variant/30'
@@ -359,7 +359,7 @@ const QcDashboard: React.FC = () => {
 
         {/* KPI 4: Parameter Kritis */}
         <div
-          onClick={() => navigate('/qc/verifikasi')}
+          onClick={() => navigate('/dashboard/qc/verifikasi')}
           className={`bg-white rounded-xl p-5 soft-shadow border flex flex-col justify-between hover-lift cursor-pointer group transition-all duration-300 ${
             (summary?.qc_deviation_count ?? 0) > 0
               ? 'border-l-4 border-l-status-danger border-outline-variant/30 animate-pulse-glow'
@@ -502,7 +502,7 @@ const QcDashboard: React.FC = () => {
               Antrean Menunggu QC
             </h3>
             <button
-              onClick={() => navigate('/qc/verifikasi')}
+              onClick={() => navigate('/dashboard/qc/verifikasi')}
               className="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer"
             >
               Lihat Semua
@@ -544,7 +544,7 @@ const QcDashboard: React.FC = () => {
                   {previewPending.map((item: any) => {
                     const hasDeviation = isExceedingBakuMutu(item);
                     return (
-                      <tr key={item.id} className="hover:bg-surface-container-low transition-all cursor-pointer" onClick={() => navigate('/qc/verifikasi')}>
+                      <tr key={item.id} className="hover:bg-surface-container-low transition-all cursor-pointer" onClick={() => navigate('/dashboard/qc/verifikasi')}>
                         <td className="p-3 font-extrabold text-primary">
                           {item.parameter_uji?.nama_parameter || 'Parameter Uji'}
                         </td>
@@ -602,7 +602,7 @@ const QcDashboard: React.FC = () => {
             </h3>
             <div className="grid grid-cols-2 gap-3">
               <button
-                onClick={() => navigate('/qc/verifikasi')}
+                onClick={() => navigate('/dashboard/qc/verifikasi')}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border border-outline-variant hover:border-primary bg-surface-container-lowest hover:bg-primary/5 transition-all cursor-pointer group"
               >
                 <div className="p-2.5 bg-primary/10 rounded-xl text-primary group-hover:scale-110 transition-transform">
@@ -611,7 +611,7 @@ const QcDashboard: React.FC = () => {
                 <span className="text-[10px] font-bold text-on-surface">Buka Verifikasi</span>
               </button>
               <button
-                onClick={() => navigate('/qc/history')}
+                onClick={() => navigate('/dashboard/qc/history')}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border border-outline-variant hover:border-secondary bg-surface-container-lowest hover:bg-secondary/5 transition-all cursor-pointer group"
               >
                 <div className="p-2.5 bg-secondary/10 rounded-xl text-secondary group-hover:scale-110 transition-transform">
@@ -630,7 +630,7 @@ const QcDashboard: React.FC = () => {
                 Verifikasi Terakhir
               </h3>
               <button
-                onClick={() => navigate('/qc/history')}
+                onClick={() => navigate('/dashboard/qc/history')}
                 className="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer"
               >
                 Semua <ChevronRight size={12} />
@@ -655,7 +655,7 @@ const QcDashboard: React.FC = () => {
                     <div
                       key={item.id}
                       className="p-3.5 hover:bg-surface-container-low transition-all cursor-pointer flex items-center justify-between gap-3"
-                      onClick={() => navigate('/qc/history')}
+                      onClick={() => navigate('/dashboard/qc/history')}
                     >
                       <div className="flex-1 min-w-0">
                         <span className="text-xs font-bold text-on-surface block truncate">

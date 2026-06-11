@@ -18,7 +18,7 @@ const Unauthorized: React.FC = () => {
         </p>
 
         <Link
-          to="/"
+          to="/dashboard"
           className="inline-flex w-full items-center justify-center bg-primary text-on-primary font-label-md text-xs font-semibold py-3 rounded-lg hover:bg-primary-container transition-all soft-shadow cursor-pointer"
         >
           Kembali ke Dashboard

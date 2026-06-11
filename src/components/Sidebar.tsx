@@ -51,48 +51,48 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     const items: MenuItem[] = [];
 
     // Global Menu - Available for everyone
-    items.push({ name: 'Dashboard', path: '/', icon: LayoutDashboard });
+    items.push({ name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard });
 
     switch (role) {
       case 'admin':
         items.push(
-          { name: 'Permohonan', path: '/permohonan', icon: FileText },
-          { name: 'Jadwal Sampling', path: '/jadwal', icon: CalendarDays },
-          { name: 'Pembayaran', path: '/pembayaran', icon: CreditCard },
-          { name: 'Monitoring Log', path: '/monitoring', icon: Eye },
-          { name: 'Arsip Dokumen', path: '/arsip', icon: Archive },
-          { name: 'Manajemen User', path: '/manajemen-user', icon: Users }
+          { name: 'Permohonan', path: '/dashboard/permohonan', icon: FileText },
+          { name: 'Jadwal Sampling', path: '/dashboard/jadwal', icon: CalendarDays },
+          { name: 'Pembayaran', path: '/dashboard/pembayaran', icon: CreditCard },
+          { name: 'Monitoring Log', path: '/dashboard/monitoring', icon: Eye },
+          { name: 'Arsip Dokumen', path: '/dashboard/arsip', icon: Archive },
+          { name: 'Manajemen User', path: '/dashboard/manajemen-user', icon: Users }
         );
         break;
       
       case 'petugas_lab':
         items.push(
-          { name: 'Registrasi Sampel', path: '/registrasi', icon: ClipboardCheck },
-          { name: 'Scan QR Sample', path: '/scan-qr', icon: Eye },
-          { name: 'Hasil Pengujian', path: '/sample-diuji', icon: ClipboardCheck },
-          { name: 'Sample Masuk', path: '/sample-masuk', icon: Layers },
-          { name: 'Pengujian Parameter', path: '/pengujian', icon: FlaskConical }
+          { name: 'Registrasi Sampel', path: '/dashboard/registrasi', icon: ClipboardCheck },
+          { name: 'Scan QR Sample', path: '/dashboard/scan-qr', icon: Eye },
+          { name: 'Hasil Pengujian', path: '/dashboard/sample-diuji', icon: ClipboardCheck },
+          { name: 'Sample Masuk', path: '/dashboard/sample-masuk', icon: Layers },
+          { name: 'Pengujian Parameter', path: '/dashboard/pengujian', icon: FlaskConical }
         );
         break;
       
       case 'qc':
         items.push(
-          { name: 'Verifikasi QC', path: '/qc/verifikasi', icon: Award },
-          { name: 'Riwayat QC', path: '/qc/history', icon: History }
+          { name: 'Verifikasi QC', path: '/dashboard/qc/verifikasi', icon: Award },
+          { name: 'Riwayat QC', path: '/dashboard/qc/history', icon: History }
         );
         break;
       
       case 'analis':
         items.push(
-          { name: 'Draft Laporan', path: '/laporan', icon: FileSpreadsheet }
+          { name: 'Draft Laporan', path: '/dashboard/laporan', icon: FileSpreadsheet }
         );
         break;
       
       case 'kepala_uptd':
         items.push(
-          { name: 'Persetujuan (Approval)', path: '/approval', icon: FileCheck2 },
-          { name: 'Laporan Final', path: '/laporan-final', icon: Archive },
-          { name: 'Tanda Tangan', path: '/signature', icon: Award }
+          { name: 'Persetujuan (Approval)', path: '/dashboard/approval', icon: FileCheck2 },
+          { name: 'Laporan Final', path: '/dashboard/laporan-final', icon: Archive },
+          { name: 'Tanda Tangan', path: '/dashboard/signature', icon: Award }
         );
         break;
     }
@@ -140,6 +140,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <NavLink
                 key={item.name}
                 to={item.path}
+                end
                 onClick={onClose}
                 className={({ isActive }) => `
                   flex items-center gap-3 px-4 py-3 rounded-lg mx-2 my-0.5 transition-all duration-200

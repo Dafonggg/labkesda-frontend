@@ -49,7 +49,7 @@ const AdminDashboard: React.FC = () => {
   };
 
   const handleNewApplication = () => {
-    navigate('/permohonan');
+    navigate('/dashboard/permohonan');
   };
 
   const handleRefresh = () => {

@@ -60,7 +60,7 @@ const PetugasLabDashboard: React.FC = () => {
       {/* Metrik KPIs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* KPI 1: Antrean Menunggu */}
-        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-status-warning transition-all cursor-pointer" onClick={() => navigate('/registrasi')}>
+        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-status-warning transition-all cursor-pointer" onClick={() => navigate('/dashboard/registrasi')}>
           <div className="absolute right-2 top-2 p-1.5 bg-status-warning/10 rounded-lg text-status-warning">
             <ClipboardList size={16} />
           </div>
@@ -77,7 +77,7 @@ const PetugasLabDashboard: React.FC = () => {
         </div>
 
         {/* KPI 2: Sampel Terdaftar Hari Ini */}
-        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-primary transition-all cursor-pointer" onClick={() => navigate('/registrasi')}>
+        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-primary transition-all cursor-pointer" onClick={() => navigate('/dashboard/registrasi')}>
           <div className="absolute right-2 top-2 p-1.5 bg-primary/10 rounded-lg text-primary">
             <Tag size={16} />
           </div>
@@ -94,7 +94,7 @@ const PetugasLabDashboard: React.FC = () => {
         </div>
 
         {/* KPI 3: Menunggu Uji */}
-        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-indigo-400 transition-all cursor-pointer" onClick={() => navigate('/pengujian')}>
+        <div className="bg-white p-4 rounded-xl border border-outline-variant soft-shadow relative overflow-hidden group hover:border-indigo-400 transition-all cursor-pointer" onClick={() => navigate('/dashboard/pengujian')}>
           <div className="absolute right-2 top-2 p-1.5 bg-indigo-50 rounded-lg text-indigo-500">
             <FlaskConical size={16} />
           </div>
@@ -122,7 +122,7 @@ const PetugasLabDashboard: React.FC = () => {
               Antrean Permohonan Terbaru
             </h3>
             <button 
-              onClick={() => navigate('/registrasi')}
+              onClick={() => navigate('/dashboard/registrasi')}
               className="text-[10px] font-bold text-primary hover:underline"
             >
               Lihat Semua
@@ -142,7 +142,7 @@ const PetugasLabDashboard: React.FC = () => {
                 {permohonanList.map((p: any) => {
                   const hasSampling = !!(p.registrasi_sample?.[0]?.samples?.[0] || p.registrasi_sample?.[0]?.sample);
                   return (
-                    <div key={p.id} className="bg-white p-3 rounded-xl border border-outline-variant hover:border-primary/30 transition-all soft-shadow-sm flex justify-between items-center group cursor-pointer" onClick={() => navigate('/registrasi')}>
+                    <div key={p.id} className="bg-white p-3 rounded-xl border border-outline-variant hover:border-primary/30 transition-all soft-shadow-sm flex justify-between items-center group cursor-pointer" onClick={() => navigate('/dashboard/registrasi')}>
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{p.nomor_permohonan}</span>
@@ -174,7 +174,7 @@ const PetugasLabDashboard: React.FC = () => {
             <p className="text-xs text-on-surface-variant font-medium mt-1">Buka halaman registrasi untuk mendaftarkan sampel dari antrean dan mencetak label QR ISO 17025.</p>
           </div>
           <button 
-            onClick={() => navigate('/registrasi')}
+            onClick={() => navigate('/dashboard/registrasi')}
             className="w-full bg-primary text-white py-3 rounded-xl font-bold text-xs hover:bg-primary-container transition-all flex items-center justify-center gap-2 mt-2 soft-shadow"
           >
             Buka Workspace Registrasi <ChevronRight size={14} />
