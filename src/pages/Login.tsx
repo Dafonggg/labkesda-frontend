@@ -49,7 +49,7 @@ const Login: React.FC = () => {
         </div>
         
         <h2 className="font-headline-lg text-lg font-extrabold text-primary tracking-tight">
-          SIM Labkesda Purwakarta
+          SIA Labkesda
         </h2>
         <p className="font-body-md text-xs text-on-surface-variant font-medium mt-1">
           Sistem Informasi Pengujian Sampel Lingkungan
@@ -161,7 +161,7 @@ const Login: React.FC = () => {
               Lupa Kata Sandi?
             </h3>
             <p className="text-xs text-on-surface-variant leading-relaxed mb-6">
-              Untuk alasan keamanan, pemulihan kata sandi akun SIM Labkesda dilakukan oleh Administrator. Silakan hubungi <strong>Administrator UPTD Labkesda Purwakarta</strong> untuk mereset kata sandi Anda.
+              Untuk alasan keamanan, pemulihan kata sandi akun SIA Labkesda dilakukan oleh Administrator. Silakan hubungi <strong>Administrator UPTD Labkesda Purwakarta</strong> untuk mereset kata sandi Anda.
             </p>
             <button
               type="button"

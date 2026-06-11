@@ -127,7 +127,7 @@ const Tracking: React.FC = () => {
             </Link>
             <div>
               <h1 className="text-sm font-bold">Tracking Sampel</h1>
-              <p className="text-[10px] text-on-primary/70">SIM Labkesda Purwakarta</p>
+              <p className="text-[10px] text-on-primary/70">SIA Labkesda</p>
             </div>
           </div>
           <div className="bg-white/10 px-3 py-1.5 rounded-lg">
@@ -249,7 +249,7 @@ const Tracking: React.FC = () => {
         {/* Footer */}
         <div className="text-center py-4 space-y-1">
           <p className="text-[10px] text-on-surface-variant/60">
-            SIM Labkesda Purwakarta • Sistem Tracking Sampel
+            SIA Labkesda • Sistem Tracking Sampel
           </p>
           <p className="text-[9px] text-on-surface-variant/40">
             Data terakhir diperbarui: {dayjs().format('DD MMM YYYY, HH:mm')} WIB
