@@ -180,7 +180,7 @@ const LandingPage: React.FC = () => {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href="https://github.com/YOUR_REPO/releases/latest"
+                  href="https://github.com/Dafonggg/labkesda-mobile-app/releases/tag/v1.0.0"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-download-btn"
@@ -275,7 +275,7 @@ const Navbar: React.FC = () => {
         {/* CTA */}
         <div className="flex items-center gap-2">
           <a
-            href="https://github.com/YOUR_REPO/releases/latest"
+            href="https://github.com/Dafonggg/labkesda-mobile-app/releases/tag/v1.0.0"
             target="_blank"
             rel="noopener noreferrer"
             id="nav-download-btn"
@@ -550,7 +550,7 @@ const DownloadCTA: React.FC = () => {
 
           <motion.div variants={fadeInUp} className="relative z-10 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://github.com/YOUR_REPO/releases/latest"
+              href="https://github.com/Dafonggg/labkesda-mobile-app/releases/tag/v1.0.0"
               target="_blank"
               rel="noopener noreferrer"
               id="cta-download-btn"
