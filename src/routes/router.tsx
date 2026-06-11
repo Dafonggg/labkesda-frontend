@@ -5,6 +5,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 
 // Public Pages
 import Login from '../pages/Login';
+import LandingPage from '../pages/LandingPage';
 import Unauthorized from '../pages/Unauthorized';
 import NotFound from '../pages/NotFound';
 
@@ -41,6 +42,9 @@ import SignatureKepala from '../pages/SignatureKepala';
 import Tracking from '../pages/Tracking';
 
 export const router = createBrowserRouter([
+  // Public Landing Page
+  { path: '/landing', element: <LandingPage /> },
+
   // Public routes (e.g. Login)
   {
     element: <AuthLayout />,
