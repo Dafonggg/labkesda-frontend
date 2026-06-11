@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { DeviceFrameset } from 'react-device-frameset';
 import 'react-device-frameset/styles/marvel-devices.min.css';
@@ -18,6 +18,7 @@ import {
   Monitor,
   ExternalLink,
 } from 'lucide-react';
+import { useAuthStore } from '@/stores/auth';
 
 import logoSvg from '../assets/logo terbaru.svg';
 import mockupDashboard from '../assets/dashboard.png';
@@ -106,6 +107,7 @@ const scaleIn = {
 /* ─── Main Landing Page Component ─────────────────────────────────────── */
 
 const LandingPage: React.FC = () => {
+  const { isAuthenticated } = useAuthStore();
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -114,6 +116,11 @@ const LandingPage: React.FC = () => {
 
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  // Jika user sudah login, langsung redirect ke dashboard (sesuai role)
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-cream-bg font-body-md text-on-surface overflow-x-hidden">
