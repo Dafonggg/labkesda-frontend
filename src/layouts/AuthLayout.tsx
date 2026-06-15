@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth';
-import bgImage from '../assets/sage-green-abstract-3840x2160-26355.jpg';
+import bgImage from '../assets/background.png';
 
 const AuthLayout: React.FC = () => {
   const { isAuthenticated } = useAuthStore();
