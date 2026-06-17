@@ -161,7 +161,7 @@ const LandingPage: React.FC = () => {
               >
                 <span className="gradient-text">Sistem Informasi</span>
                 <br />
-                <span className="text-on-surface">Analisis Labkesda</span>
+                <span className="text-on-surface">Analitik Labkesda</span>
                 <br />
                 <span className="gradient-text-gold">Purwakarta</span>
               </motion.h1>
@@ -652,7 +652,7 @@ const Footer: React.FC = () => {
         {/* Divider */}
         <div className="border-t border-white/10 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
           <p className="text-[9px] sm:text-[10px] text-white/30 leading-relaxed">
-            © {new Date().getFullYear()} SIA Labkesda — Sistem Informasi Analisis Laboratorium Kesehatan Daerah Kabupaten Purwakarta.
+            © {new Date().getFullYear()} SIA Labkesda — Sistem Informasi Analitik Laboratorium Kesehatan Daerah Kabupaten Purwakarta.
             Seluruh hak cipta dilindungi.
           </p>
         </div>
