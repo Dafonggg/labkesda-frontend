@@ -279,7 +279,7 @@ const KepalaUptdDashboard: React.FC = () => {
                           <div className="flex items-center justify-end gap-1.5">
                             {/* Preview LHP */}
                             <button
-                              onClick={() => navigate(`/approval/preview/${app.id}`)}
+                              onClick={() => navigate(`/dashboard/approval/preview/${app.id}`)}
                               className="inline-flex items-center justify-center gap-1 bg-white border border-outline-variant text-on-surface hover:text-primary hover:border-primary/50 px-2.5 py-1.5 rounded-lg hover:bg-primary/5 transition-all text-[10px] font-bold cursor-pointer soft-shadow"
                               title="Tinjau draft laporan"
                             >
