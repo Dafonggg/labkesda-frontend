@@ -142,7 +142,7 @@ const Laporan: React.FC = () => {
                       <td className="p-4">
                         <div className="flex items-center justify-center gap-2">
                           <button
-                            onClick={() => navigate(`/laporan/preview/${draft.id}`)}
+                            onClick={() => navigate(`/dashboard/laporan/preview/${draft.id}`)}
                             className="inline-flex items-center gap-1 bg-white border border-outline-variant text-on-surface px-2.5 py-1.5 rounded hover:bg-surface-container transition-all text-[10px] font-semibold cursor-pointer soft-shadow"
                           >
                             <Eye size={12} />

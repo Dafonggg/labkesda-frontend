@@ -112,7 +112,7 @@ const Approval: React.FC = () => {
 
                 {/* Preview button */}
                 <button
-                  onClick={() => navigate(`/approval/preview/${app.id}`)}
+                  onClick={() => navigate(`/dashboard/approval/preview/${app.id}`)}
                   className="w-full py-2 bg-white border border-outline-variant text-on-surface hover:bg-surface-container font-semibold text-[10px] rounded transition-all cursor-pointer soft-shadow flex items-center justify-center gap-1.5 mb-1"
                 >
                   <Eye size={12} />

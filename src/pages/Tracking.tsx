@@ -530,7 +530,7 @@ function renderStageDetail(stage: TrackingStage, registrasi: any) {
               {/* Download PDF Button */}
               <div className="pt-1">
                 <a
-                  href={`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/tracking/${registrasi.qr_token}/download`}
+                  href={`${import.meta.env.VITE_API_URL}/tracking/${registrasi.qr_token}/download`}
                   className="w-full flex items-center justify-center gap-2 bg-status-success text-white text-[11px] font-bold py-2 px-3 rounded-lg hover:bg-status-success/90 active:scale-95 transition-all shadow-sm"
                 >
                   <FileText size={14} />

@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { toast } from 'sonner';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+const API_URL = import.meta.env.VITE_API_URL;
+
+if (!API_URL) {
+  console.error('[Config] VITE_API_URL is not set. API requests will fail.');
+}
 
 export const apiClient = axios.create({
   baseURL: API_URL,
